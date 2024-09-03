@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Avaliação de Jogos</title>
+</head>
+<body>
+    <h1>Avaliação de Jogos</h1>
+    <form action="/submit_form" method="post">
+        <!-- Nome do Jogo -->
+        <label for="nome_jogo">Nome do Jogo:</label><br>
+        <input type="text" id="nome_jogo" name="nome_jogo" required><br><br>
+ 
+        <!-- Tipo do Jogo -->
+        <label for="tipo_jogo">Tipo do Jogo:</label><br>
+        <select id="tipo_jogo" name="tipo_jogo" required>
+            <option value="Ação">Ação</option>
+            <option value="Aventura">Aventura</option>
+            <option value="RPG">RPG</option>
+            <option value="Esporte">Esporte</option>
+            <option value="Estratégia">Estratégia</option>
+            <option value="Simulação">Simulação</option>
+            <!-- Adicione mais opções conforme necessário -->
+        </select><br><br>
+ 
+        <!-- Subtipo do Jogo -->
+        <label for="subtipo_jogo">Subtipo do Jogo (opcional):</label><br>
+        <input type="text" id="subtipo_jogo" name="subtipo_jogo"><br><br>
+ 
+        <!-- Avaliação do Jogo -->
+        <label for="avaliacao_jogo">Sua Avaliação:</label><br>
+        <input type="number" id="avaliacao_jogo" name="avaliacao_jogo" min="1" max="10" required><br><br>
+ 
+        <!-- Resumo do Jogo -->
+        <label for="resumo_jogo">Resumo do Jogo:</label><br>
+        <textarea id="resumo_jogo" name="resumo_jogo" rows="4" cols="50" required></textarea><br><br>
+ 
+        <!-- Botão de Envio -->
+        <input type="submit" value="Enviar Avaliação">
+    </form>
+</body>
+</html>
+ 
