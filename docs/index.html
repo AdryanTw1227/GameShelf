@@ -11,16 +11,27 @@
    body {
             font-family: 'Press Start 2P', cursive;
         }
+        .btn-hover:hover {
+            transform: scale(1.1);
+        }
+        .bg-fade::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
   </style>
  </head>
-  <body class="bg-cover bg-center" style="background-image: hrf=('docs/imagens/bginicio.jpg);">
-  <div class="flex flex-col items-center justify-center min-h-screen text-center text-white" style="background-image: hrf=('docs/imagens/bginicio.jpg);">
-   <div class="relative">
-    <img alt="Sonic character in a gold ring" class="rounded-full border-4 border-yellow-500" height="200" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-Hh5RPsKhtBPsWCFSiEKnUJ6x/user-8qgiVpCV0U0b7zDjfFInHgjl/img-eLFhqHyoPS335Gjra5RLtrkN.png?st=2024-09-16T17%3A30%3A21Z&amp;se=2024-09-16T19%3A30%3A21Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-15T23%3A43%3A24Z&amp;ske=2024-09-16T23%3A43%3A24Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=rd1fUzoV%2BQIro9Lju3BTe9z0g2pkiNYAIEKHsHgrGV4%3D" width="200"/>
-    <div class="absolute bottom-0 left-0 right-0 text-xs text-gray-300 transform rotate-12">
-    </div>
+ <body class="relative bg-cover bg-center bg-fade" style="background-image: url('https://i.pinimg.com/564x/99/23/7e/99237e3b360b4f80db96fab808b72201.jpg');">
+  <div class="flex flex-col items-center justify-center min-h-screen text-center text-white">
+   <div class="relative mt-4">
+    <img alt="Sonic character in a gold ring" class="rounded-full mb-4" height="300" src="https://artpoin.com/wp-content/uploads/2024/01/artpoin-sonic-the-hedgehog60.png" width="300"/>
    </div>
-   <h1 class="mt-4 text-4xl">
+   <h1 class="mt-2 text-4xl">
     BEM VINDO AO
    </h1>
    <h2 class="text-5xl font-bold">
@@ -29,14 +40,14 @@
    <p class="mt-2 text-lg">
     A SUA GALERIA DE JOGOS!
    </p>
-   <div class="mt-8 space-y-4">
-    <button class="px-8 py-4 text-lg font-bold text-white bg-blue-500 rounded">
+   <div class="mt-16 space-y-4">
+    <button class="px-6 py-3 text-lg font-bold text-white bg-blue-500 border-4 border-blue-700 rounded btn-hover transition-transform duration-200">
      PAGINA DE LOGIN
     </button>
-    <button class="px-8 py-4 text-lg font-bold text-white bg-blue-500 rounded">
+    <button class="px-6 py-3 text-lg font-bold text-white bg-blue-500 border-4 border-blue-700 rounded btn-hover transition-transform duration-200">
      NOSSA GALERIA
     </button>
-    <button class="px-8 py-4 text-lg font-bold text-white bg-blue-500 rounded">
+    <button class="px-6 py-3 text-lg font-bold text-white bg-blue-500 border-4 border-blue-700 rounded btn-hover transition-transform duration-200">
      SOBRE OS CRIADORES
     </button>
    </div>
