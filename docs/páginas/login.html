@@ -1,6 +1,5 @@
 <html>
  <head>
-    <title>Entrar</title>    
   <script src="https://cdn.tailwindcss.com">
   </script>
   <link href="="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
@@ -53,6 +52,11 @@
    .custom-button:hover {
             transform: scale(1.05); /* Grow the button slightly on hover */
         }
+   .hyperlink {
+            color: #2563EB; /* Blue color for hyperlink */
+            text-decoration: underline;
+            cursor: pointer;
+        }
   </style>
  </head>
  <body class="flex items-center justify-center min-h-screen">
@@ -72,7 +76,7 @@
     Entrar
    </button>
    <p class="text-white mt-4">Esqueceu sua senha? Clique aqui.</p>
-   <p class="text-white mt-4">Caso não tenha conta.<a href="registro.html">Registre-se aqui.</a></p>
+   <p class="text-white mt-4">Caso não tenha conta.<a href="registro.html"><span class="hyperlink">Registre-se aqui.</span></a></p>
   </div>
  </body>
 </html>
