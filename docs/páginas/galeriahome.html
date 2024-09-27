@@ -94,16 +94,16 @@
    <div class="w-64 h-80 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
    </div>
   </div>
-  <!-- Carousel Section -->
+ <!-- Carousel Section 1 -->
   <div class="relative mb-8">
    <h2 class="section-title text-left mb-4">
     Destaques do Momento
    </h2>
-   <button class="carousel-button left" onclick="scrollCarousel(-1)">
+   <button class="carousel-button left" onclick="scrollCarousel('carousel1', -1)">
     <i class="fas fa-chevron-left">
     </i>
    </button>
-   <div class="carousel">
+   <div class="carousel" id="carousel1">
     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
     </div>
     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
@@ -125,21 +125,21 @@
     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
     </div>
    </div>
-   <button class="carousel-button right" onclick="scrollCarousel(1)">
+   <button class="carousel-button right" onclick="scrollCarousel('carousel1', 1)">
     <i class="fas fa-chevron-right">
     </i>
    </button>
   </div>
-  <!-- Carrossel 2 -->
+  <!-- Carousel Section 2 -->
   <div class="relative mb-8">
    <h2 class="section-title text-left mb-4">
-    Adicionados Recentemente 
+    Mais Destaques
    </h2>
-   <button class="carousel-button left" onclick="scrollCarousel(-1)">
+   <button class="carousel-button left" onclick="scrollCarousel('carousel2', -1)">
     <i class="fas fa-chevron-left">
     </i>
    </button>
-   <div class="carousel">
+   <div class="carousel" id="carousel2">
     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
     </div>
     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
@@ -161,11 +161,10 @@
     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
     </div>
    </div>
-   <button class="carousel-button right" onclick="scrollCarousel(1)">
+   <button class="carousel-button right" onclick="scrollCarousel('carousel2', 1)">
     <i class="fas fa-chevron-right">
     </i>
    </button>
-  </div>
   <!-- Section 4 -->
   <div class="grid grid-cols-5 gap-4 mb-8">
    <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
