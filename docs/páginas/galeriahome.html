@@ -1,9 +1,9 @@
 <html>
  <head>
-  <title>Galeria</title>
   <script src="https://cdn.tailwindcss.com">
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"/>
   <style>
    body {
             background-image: url('https://placehold.co/1920x1080?text=Background+Image');
@@ -40,142 +40,124 @@
    .carousel-button.right {
             right: 0;
         }
+   .section-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.25rem; /* Adjusted font size */
+            border-bottom: 2px solid white;
+            padding-bottom: 0.25rem; /* Adjusted padding to bring text closer to the line */
+            margin-bottom: 0.5rem; /* Adjusted margin to bring text closer to the line */
+            color: white; /* White font color */
+        }
+   .btn-custom {
+            background-color: rgb(59, 130, 246); /* Blue background */
+            color: white; /* White text */
+            font-family: 'Press Start 2P', cursive; /* Press Start 2P font */
+            border: 2px solid rgb(37, 99, 235); /* Darker blue border */
+            padding: 0.25rem 0.5rem; /* Smaller padding */
+            border-radius: 0.25rem; /* Rounded corners */
+            transition: background-color 0.3s ease; /* Smooth transition */
+            font-size: 0.75rem; /* Smaller font size */
+        }
+   .btn-custom:hover {
+            background-color: rgb(37, 99, 235); /* Darker blue on hover */
+        }
   </style>
  </head>
  <body class="flex flex-col items-center justify-center min-h-screen bg-opacity-50">
-  <div class="text-center mb-8">
+  <!-- Navbar -->
+  <nav class="w-full bg-transparent p-2 fixed top-0 z-50">
+   <div class="container mx-auto flex justify-between items-center">
+    <div class="text-white font-bold text-xl" style="font-family: 'Press Start 2P', cursive;">
+     GameShelf
+    </div>
+    <div class="flex-grow mx-4 max-w-xs">
+     <input class="w-full p-2 rounded" placeholder="Search..." type="text"/>
+    </div>
+    <div class="ml-4">
+     <button class="btn-custom">
+      Entrar
+     </button>
+    </div>
+   </div>
+  </nav>
+  <div class="text-center mb-8 mt-16">
    <div class="flex items-center justify-center space-x-4">
    </div>
   </div>
   <!-- Section 1 -->
-  <div class="grid grid-cols-5 gap-4 mb-8">
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
+  <div class="grid grid-cols-3 gap-4 mb-8">
+   <div class="w-64 h-80 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
    </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
+   <div class="w-64 h-80 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
    </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
-   </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
-   </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
-   </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
-   </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
-   </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
-   </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
-   </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
+   <div class="w-64 h-80 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
    </div>
   </div>
-  <!-- Section 3 -->
+  <!-- Carousel Section -->
   <div class="relative mb-8">
+   <h2 class="section-title text-left mb-4">
+    Destaques do Momento
+   </h2>
    <button class="carousel-button left" onclick="scrollCarousel(-1)">
     <i class="fas fa-chevron-left">
     </i>
    </button>
    <div class="carousel">
-    <div class="carousel-item w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
-     <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-      <i class="fas fa-plus text-black text-2xl">
-      </i>
-     </div>
+    <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
     </div>
-    <div class="carousel-item w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
-     <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-      <i class="fas fa-plus text-black text-2xl">
-      </i>
-     </div>
+    <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
     </div>
-    <div class="carousel-item w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
-     <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-      <i class="fas fa-plus text-black text-2xl">
-      </i>
-     </div>
+    <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
     </div>
-    <div class="carousel-item w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
-     <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-      <i class="fas fa-plus text-black text-2xl">
-      </i>
-     </div>
+    <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
     </div>
-    <div class="carousel-item w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
-     <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-      <i class="fas fa-plus text-black text-2xl">
-      </i>
-     </div>
+    <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
     </div>
-    <div class="carousel-item w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
-     <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-      <i class="fas fa-plus text-black text-2xl">
-      </i>
-     </div>
+    <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
     </div>
-    <div class="carousel-item w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
-     <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-      <i class="fas fa-plus text-black text-2xl">
-      </i>
-     </div>
+    <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
     </div>
-    <div class="carousel-item w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
-     <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-      <i class="fas fa-plus text-black text-2xl">
-      </i>
-     </div>
+    <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
     </div>
-    <div class="carousel-item w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
-     <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-      <i class="fas fa-plus text-black text-2xl">
-      </i>
-     </div>
+    <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
     </div>
-    <div class="carousel-item w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
-     <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-      <i class="fas fa-plus text-black text-2xl">
-      </i>
-     </div>
+    <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
+    </div>
+   </div>
+   <button class="carousel-button right" onclick="scrollCarousel(1)">
+    <i class="fas fa-chevron-right">
+    </i>
+   </button>
+  </div>
+  <!-- Carrossel 2 -->
+  <div class="relative mb-8">
+   <h2 class="section-title text-left mb-4">
+    Adicionados Recentemente 
+   </h2>
+   <button class="carousel-button left" onclick="scrollCarousel(-1)">
+    <i class="fas fa-chevron-left">
+    </i>
+   </button>
+   <div class="carousel">
+    <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
+    </div>
+    <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
+    </div>
+    <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
+    </div>
+    <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
+    </div>
+    <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
+    </div>
+    <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
+    </div>
+    <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
+    </div>
+    <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
+    </div>
+    <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
+    </div>
+    <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center mx-2">
     </div>
    </div>
    <button class="carousel-button right" onclick="scrollCarousel(1)">
@@ -185,128 +167,28 @@
   </div>
   <!-- Section 4 -->
   <div class="grid grid-cols-5 gap-4 mb-8">
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
+   <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
    </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
+   <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
    </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
+   <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
    </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
+   <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
    </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
-   </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
-   </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
-   </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
-   </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
-   </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
+   <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
    </div>
   </div>
   <!-- Section 5 -->
   <div class="grid grid-cols-5 gap-4 mb-8">
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
+   <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
    </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
+   <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
    </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
+   <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
    </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
+   <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
    </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
-   </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
-   </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
-   </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
-   </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
-   </div>
-   <div class="w-36 h-44 bg-blue-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-     <i class="fas fa-plus text-black text-2xl">
-     </i>
-    </div>
+   <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
    </div>
   </div>
   <script>
