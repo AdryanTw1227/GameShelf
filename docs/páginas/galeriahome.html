@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"/>
   <style>
    body {
-            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.8));
+            background-image: url('https://placehold.co/1920x1080?text=Background+Image');
             background-attachment: fixed;
             background-size: cover;
             background-position: center;
@@ -71,13 +71,24 @@
     <div class="text-white font-bold text-xl" style="font-family: 'Press Start 2P', cursive;">
      GameShelf
     </div>
-    <div class="flex-grow mx-4 max-w-xs">
-     <input class="w-full p-2 rounded" placeholder="Search..." type="text"/>
-    </div>
-    <div class="ml-4">
-     <button class="btn-custom">
-      Entrar
-     </button>
+    <div class="space-x-4 flex items-center">
+     <a class="text-white hover:text-gray-300" href="#">
+      Home
+     </a>
+     <a class="text-white hover:text-gray-300" href="#">
+      About
+     </a>
+     <a class="text-white hover:text-gray-300" href="#">
+      Services
+     </a>
+     <a class="text-white hover:text-gray-300" href="#">
+      Contact
+     </a>
+     <div class="ml-4">
+      <button class="btn-custom">
+       Entrar
+      </button>
+     </div>
     </div>
    </div>
   </nav>
@@ -94,7 +105,7 @@
    <div class="w-64 h-80 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
    </div>
   </div>
- <!-- Carousel Section 1 -->
+  <!-- Carousel Section 1 -->
   <div class="relative mb-8">
    <h2 class="section-title text-left mb-4">
     Destaques do Momento
@@ -133,7 +144,7 @@
   <!-- Carousel Section 2 -->
   <div class="relative mb-8">
    <h2 class="section-title text-left mb-4">
-    Mais Recentes
+    Mais Destaques
    </h2>
    <button class="carousel-button left" onclick="scrollCarousel('carousel2', -1)">
     <i class="fas fa-chevron-left">
@@ -165,35 +176,10 @@
     <i class="fas fa-chevron-right">
     </i>
    </button>
-  <!-- Section 4 -->
-  <div class="grid grid-cols-5 gap-4 mb-8">
-   <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-   </div>
-   <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-   </div>
-   <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-   </div>
-   <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-   </div>
-   <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-   </div>
-  </div>
-  <!-- Section 5 -->
-  <div class="grid grid-cols-5 gap-4 mb-8">
-   <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-   </div>
-   <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-   </div>
-   <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-   </div>
-   <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-   </div>
-   <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
-   </div>
   </div>
   <script>
-   function scrollCarousel(direction) {
-            const carousel = document.querySelector('.carousel');
+   function scrollCarousel(carouselId, direction) {
+            const carousel = document.getElementById(carouselId);
             const scrollAmount = carousel.clientWidth / 5; // Adjust this value to control the scroll amount
             carousel.scrollBy({
                 left: direction * scrollAmount,
