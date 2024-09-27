@@ -6,13 +6,14 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"/>
   <style>
-   body {
-            background-image: url('https://placehold.co/1920x1080?text=Background+Image');
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-            overflow-y: scroll;
-        }
+   body{
+             background-image: url('https://placehold.co/1920x1080?text=Background+Image');
+             background-attachment: fixed;
+             background-size: cover;
+             background-position: center;
+             overflow-y: scroll;
+             position: relative; /* Adicione isso */
+         }
       .fade-overlay {
             position: absolute;
             top: 0;
@@ -73,8 +74,7 @@
         }
   </style>
  </head>
- <body class="flex flex-col items-center justify-center min-h-screen bg-opacity-50">
-  <div class="fade-overlay">
+ <body class="fade-overlay flex flex-col items-center justify-center min-h-screen bg-opacity-50"> 
   <!-- Navbar -->
   <nav class="w-full bg-transparent p-2 fixed top-0 z-50">
    <div class="container mx-auto flex justify-between items-center">
