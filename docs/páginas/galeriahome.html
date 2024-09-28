@@ -1,13 +1,11 @@
-
 <html>
  <head>
-  <title>Galeria</title>
   <script src="https://cdn.tailwindcss.com">
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"/>
   <style>
-   body{
+    body{
              background-image: url('https://placehold.co/1920x1080?text=Background+Image');
              background-attachment: fixed;
              background-size: cover;
@@ -15,7 +13,7 @@
              overflow-y: scroll;
              position: relative; /* Adicione isso */
          }
-      .fade-overlay {
+   .fade-overlay {
             position: absolute;
             top: 0;
             left: 0;
@@ -75,7 +73,7 @@
         }
   </style>
  </head>
- <body class="fade-overlay flex flex-col items-center justify-center min-h-screen bg-opacity-50"> 
+ <body class="fade-overlay flex flex-col items-center justify-center min-h-screen bg-opacity-50">
   <!-- Navbar -->
   <nav class="w-full bg-transparent p-2 fixed top-0 z-50">
    <div class="container mx-auto flex justify-between items-center">
@@ -86,9 +84,9 @@
      <input class="w-full p-2 rounded" placeholder="Search..." type="text"/>
     </div>
     <div class="ml-4">
-     <a href='login.html'><button class="btn-custom">
+     <button class="btn-custom">
       Entrar
-     </button></a>
+     </button>
     </div>
    </div>
   </nav>
@@ -105,7 +103,7 @@
    <div class="w-64 h-80 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
    </div>
   </div>
-  <!-- Carousel Section 1 -->
+ <!-- Carousel Section 1 -->
   <div class="relative mb-8">
    <h2 class="section-title text-left mb-4">
     Destaques do Momento
@@ -177,7 +175,8 @@
     </i>
    </button>
   </div>
-   <div class="grid grid-cols-5 gap-4 mb-8">
+  <!-- Section 4 -->
+  <div class="grid grid-cols-5 gap-4 mb-8">
    <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
    </div>
    <div class="w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center">
@@ -203,8 +202,8 @@
    </div>
   </div>
   <script>
-   function scrollCarousel(carouselId, direction) {
-            const carousel = document.getElementById(carouselId);
+   function scrollCarousel(direction) {
+            const carousel = document.querySelector('.carousel');
             const scrollAmount = carousel.clientWidth / 5; // Adjust this value to control the scroll amount
             carousel.scrollBy({
                 left: direction * scrollAmount,
