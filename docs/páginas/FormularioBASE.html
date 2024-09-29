@@ -1,44 +1,291 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Avaliação de Jogos</title>
-</head>
-<body>
-    <h1>Avaliação de Jogos</h1>
-    <form action="/submit_form" method="post">
-        <!-- Nome do Jogo -->
-        <label for="nome_jogo">Nome do Jogo:</label><br>
-        <input type="text" id="nome_jogo" name="nome_jogo" required><br><br>
- 
-        <!-- Tipo do Jogo -->
-        <label for="tipo_jogo">Tipo do Jogo:</label><br>
-        <select id="tipo_jogo" name="tipo_jogo" required>
-            <option value="Ação">Ação</option>
-            <option value="Aventura">Aventura</option>
-            <option value="RPG">RPG</option>
-            <option value="Esporte">Esporte</option>
-            <option value="Estratégia">Estratégia</option>
-            <option value="Simulação">Simulação</option>
-            <!-- Adicione mais opções conforme necessário -->
-        </select><br><br>
- 
-        <!-- Subtipo do Jogo -->
-        <label for="subtipo_jogo">Plataforma:</label><br>
-        <input type="text" id="subtipo_jogo" name="subtipo_jogo"><br><br>
- 
-        <!-- Avaliação do Jogo -->
-        <label for="avaliacao_jogo">Sua Avaliação:</label><br>
-        <input type="number" id="avaliacao_jogo" name="avaliacao_jogo" min="1" max="10" required><br><br>
- 
-        <!-- Resumo do Jogo -->
-        <label for="resumo_jogo">Resumo do Jogo:</label><br>
-        <textarea id="resumo_jogo" name="resumo_jogo" rows="4" cols="50" required></textarea><br><br>
- 
-        <!-- Botão de Envio -->
-        <input type="submit" value="Enviar Avaliação">
+<html>
+ <head>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+            background: url('https://wallpapercave.com/wp/wp4147573.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+        }
+   .fade-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%);
+            z-index: 1;
+        }
+   h1 {
+            font-family: 'Press Start 2P', cursive;
+            z-index: 2;
+            position: relative;
+            color: white;
+        }
+   .shadow-box {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            position: relative;
+        }
+   .matte-black {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            border-radius: 8px;
+            border: 1px solid #a9a9a9;
+            z-index: 2;
+            position: relative;
+        }
+   .form-text {
+            font-family: 'Press Start 2P', cursive;
+            color: white;
+        }
+   .select-box {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+        }
+   .submit-button {
+            font-family: 'Press Start 2P', cursive;
+            border: 2px solid #4a4a4a;
+        }
+   .icon-button {
+            cursor: pointer;
+        }
+  </style>
+  <script>
+   function toggleOptions() {
+            var checkbox1 = document.getElementById('botao1');
+            var optionsDiv1 = document.getElementById('options-div-1');
+            if (checkbox1.checked) {
+                optionsDiv1.style.display = 'block';
+            } else {
+                optionsDiv1.style.display = 'none';
+            }
+
+            var checkbox2 = document.getElementById('botao2');
+            var optionsDiv2 = document.getElementById('options-div-2');
+            if (checkbox2.checked) {
+                optionsDiv2.style.display = 'block';
+            } else {
+                optionsDiv2.style.display = 'none';
+            }
+
+            var checkbox3 = document.getElementById('botao3');
+            var optionsDiv3 = document.getElementById('options-div-3');
+            if (checkbox3.checked) {
+                optionsDiv3.style.display = 'block';
+            } else {
+                optionsDiv3.style.display = 'none';
+            }
+        }
+
+        function validateForm() {
+            var checkboxes = document.getElementsByName('botao');
+            var isChecked = false;
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    isChecked = true;
+                    break;
+                }
+            }
+            if (!isChecked) {
+                alert('Por favor, selecione pelo menos uma opção.');
+                return false;
+            }
+
+            var checkbox1 = document.getElementById('botao1');
+            if (checkbox1.checked) {
+                var options1 = document.getElementsByName('option1');
+                var isOption1Checked = false;
+                for (var i = 0; i < options1.length; i++) {
+                    if (options1[i].checked) {
+                        isOption1Checked = true;
+                        break;
+                    }
+                }
+                if (!isOption1Checked) {
+                    alert('Por favor, selecione pelo menos uma opção para o Botão 1.');
+                    return false;
+                }
+            }
+
+            var checkbox2 = document.getElementById('botao2');
+            if (checkbox2.checked) {
+                var options2 = document.getElementsByName('option2');
+                var isOption2Checked = false;
+                for (var i = 0; i < options2.length; i++) {
+                    if (options2[i].checked) {
+                        isOption2Checked = true;
+                        break;
+                    }
+                }
+                if (!isOption2Checked) {
+                    alert('Por favor, selecione pelo menos uma opção para o Botão 2.');
+                    return false;
+                }
+            }
+
+            var checkbox3 = document.getElementById('botao3');
+            if (checkbox3.checked) {
+                var options3 = document.getElementsByName('option3');
+                var isOption3Checked = false;
+                for (var i = 0; i < options3.length; i++) {
+                    if (options3[i].checked) {
+                        isOption3Checked = true;
+                        break;
+                    }
+                }
+                if (!isOption3Checked) {
+                    alert('Por favor, selecione pelo menos uma opção para o Botão 3.');
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        function toggleCheckbox(id) {
+            var checkbox = document.getElementById(id);
+            checkbox.checked = !checkbox.checked;
+            toggleOptions();
+        }
+  </script>
+ </head>
+ <body class="bg-gray-200 flex flex-col items-center justify-center min-h-screen shadow-box">
+  <div class="fade-overlay"></div>
+  <h1 class="text-3xl font-bold mb-8 absolute top-8">
+    NOS CONTE MAIS SOBRE O JOGO QUE QUER ADICIONAR!
+   </h1>
+  <div class="text-center mt-24 relative z-2">
+   <div class="flex justify-center items-start space-x-4">
+    <form class="w-[600px] h-48 p-4 shadow-box matte-black" onsubmit="return validateForm()" style="height: 300px;">
+     <div class="mb-4">
+      <label class="block text-left mb-2 font-bold form-text" for="nome-jogo">
+        Nome do Jogo:
+      </label>
+      <input class="w-full p-2 border border-gray-300 form-text matte-black" id="nome-jogo" name="nome-jogo" required type="text"/>
+     </div>
+     <div class="mb-4">
+      <label class="block text-left mb-2 font-bold form-text" for="genero-jogo">
+        Gênero do Jogo:
+      </label>
+      <select class="w-full p-2 border border-gray-300 form-text matte-black" id="genero-jogo" name="genero-jogo" required>
+       <option value="">
+         Selecione um gênero
+       </option>
+       <option value="acao">
+         Ação
+       </option>
+       <option value="aventura">
+         Aventura
+       </option>
+       <option value="rpg">
+         RPG
+       </option>
+       <option value="simulacao">
+         Simulação
+       </option>
+       <option value="estrategia">
+         Estratégia
+       </option>
+       <option value="puzzle">
+         Puzzle
+       </option>
+       <option value="terror">
+         Terror
+       </option>
+       <option value="esporte">
+         Esporte
+       </option>
+       <option value="musical">
+         Musical
+       </option>
+       <option value="plataforma">
+         Plataforma
+       </option>
+       <option value="corrida">
+         Corrida
+       </option>
+       <option value="fps">
+         FPS
+       </option>
+       <option value="moba">
+         MOBA
+       </option>
+       <option value="luta">
+         Luta
+       </option>
+       <option value="casual">
+         Casual
+       </option>
+      </select>
+     </div>
+     <button class="bg-blue-500 text-white px-4 py-2 mt-4 submit-button" type="submit">
+       Enviar
+     </button>
     </form>
-</body>
+    <div class="space-y-4">
+     <form class="w-64 h-24 p-2 flex items-center justify-center shadow-box matte-black">
+      <label class="mx-1 form-text">
+       <input class="mr-2" id="botao1" name="botao" type="checkbox" value="botao1"/>
+       <img alt="PC icon" class="icon-button" onclick="toggleCheckbox('botao1')" src="https://cdn-icons-png.flaticon.com/512/4703/4703487.png" width="50"/>
+      </label>
+      <label class="mx-1 form-text">
+       <input class="mr-2" id="botao2" name="botao" type="checkbox" value="botao2"/>
+       <img alt="Video game controller icon" class="icon-button" onclick="toggleCheckbox('botao2')" src="https://cdn-icons-png.flaticon.com/512/4738/4738879.png" width="50"/>
+      </label>
+      <label class="mx-1 form-text">
+       <input class="mr-2" id="botao3" name="botao" type="checkbox" value="botao3"/>
+       <img alt="Mobile phone icon" class="icon-button" onclick="toggleCheckbox('botao3')" src="https://cdn-icons-png.flaticon.com/512/5697/5697604.png" width="50"/>
+      </label>
+     </form>
+     <div class="w-64 h-24 p-2 flex items-center justify-center shadow-box matte-black" id="options-div-1" style="display: none;">
+      <label class="mx-1 form-text">
+       <input class="mr-2" name="option1" type="checkbox" value="option1"/>
+       Opção 1
+      </label>
+      <label class="mx-1 form-text">
+       <input class="mr-2" name="option1" type="checkbox" value="option2"/>
+       Opção 2
+      </label>
+      <label class="mx-1 form-text">
+       <input class="mr-2" name="option1" type="checkbox" value="option3"/>
+       Opção 3
+      </label>
+     </div>
+     <div class="w-64 h-24 p-2 flex items-center justify-center shadow-box matte-black" id="options-div-2" style="display: none;">
+      <label class="mx-1 form-text">
+       <input class="mr-2" name="option2" type="checkbox" value="option1"/>
+       Opção 1
+      </label>
+      <label class="mx-1 form-text">
+       <input class="mr-2" name="option2" type="checkbox" value="option2"/>
+       Opção 2
+      </label>
+      <label class="mx-1 form-text">
+       <input class="mr-2" name="option2" type="checkbox" value="option3"/>
+       Opção 3
+      </label>
+     </div>
+     <div class="w-64 h-24 p-2 flex items-center justify-center shadow-box matte-black" id="options-div-3" style="display: none;">
+      <label class="mx-1 form-text">
+       <input class="mr-2" name="option3" type="checkbox" value="option4"/>
+       Opção 4
+      </label>
+      <label class="mx-1 form-text">
+       <input class="mr-2" name="option3" type="checkbox" value="option5"/>
+       Opção 5
+      </label>
+      <label class="mx-1 form-text">
+       <input class="mr-2" name="option3" type="checkbox" value="option6"/>
+       Opção 6
+      </label>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
 </html>
- 
