@@ -1,83 +1,175 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE HTML>
+<html lang='pt-br'>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GameShelf</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
-  <style>
-    body {
-      font-family: 'Press Start 2P', cursive;
-    }
-    .btn-hover:hover {
-      transform: scale(1.1);
-    }
-    .bg-fade::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: -1;
-    }
-    @media (max-width: 768px) {
-      .flex-col {
-        flex-direction: column;
-      }
-      .mt-12 {
-        margin-top: 6rem;
-      }
-      .px-6 {
-        padding-left: 2rem;
-        padding-right: 2rem;
-      }
-      .py-3 {
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
-      }
-      .text-lg {
-        font-size: 1.25rem;
-      }
-      .text-5xl {
-        font-size: 2.5rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuário</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1c1c1c;
+            color: #ffffff;
+            font-family: 'Press Start 2P', cursive;
+        }
+        .hover-grow:hover {
+            transform: scale(1.05);
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0);
+            z-index: 1000;
+        }
+        .navbar .logo {
+            font-family: 'Press Start 2P', cursive;
+            color: white;
+            font-size: 1.25rem;
+        }
+        .navbar .search-bar {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+        }
+        .navbar .search-bar input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            font-family: 'Press Start 2P', cursive;
+            margin-right: 0.5rem;
+        }
+        .navbar .search-bar i {
+            color: white;
+        }
+        .navbar .login-button {
+            font-family: 'Press Start 2P', cursive;
+            background: #007bff;
+            border: 2px solid #0056b3;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+        }
+
+        /* Add media queries for responsiveness */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar .logo {
+                font-size: 1rem;
+            }
+            .navbar .search-bar {
+                width: 100%;
+            }
+            .navbar .search-bar input {
+                width: 100%;
+            }
+            .w-full.max-w-4xl {
+                max-width: 100%;
+            }
+            .flex.space-x-4 {
+                flex-direction: column;
+                align-items: center;
+            }
+            .w-1/4.h-32 {
+                width: 100%;
+                height: 16rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .navbar .logo {
+                font-size: 0.75rem;
+            }
+            .w-1/4.h-32 {
+                height: 12rem;
+            }
+        }
+        @media (max-width: 320px) {
+            .navbar .logo {
+                font-size: 0.5rem;
+            }
+            .w-1/4.h-32 {
+                height: 8rem;
+            }
+        }
+    </style>
 </head>
-<body class="relative bg-cover bg-center bg-fade" style="background-image: url('imagens/fundoinicio.png');">
-  <div class="absolute top-4 right-4">
-    <a href="paginas/login.html"><button class="px-4 py-2 text-sm font-bold text-white bg-blue-500 border-2 border-blue-700 rounded btn-hover transition-transform duration-200">
-      ENTRAR
-    </button></a>
-  </div>
-  <div class="flex flex-col items-center justify-center min-h-screen text-center text-white">
-    <div class="relative mt-4">
-      <img alt="Sonic character in a gold ring" class="rounded-full mb-4" height="300" src="imagens/sonicinring.png" width="300"/>
+<body class="flex justify-center items-center min-h-screen">
+    <div class="navbar">
+        <a href='../index.html'><div class="logo">
+            GameShelf
+        </div></a>
     </div>
-    <h1 class="mt-2 text-4xl">
-      BEM VINDO AO
-    </h1>
-    <h2 class="text-5xl font-bold">
-      GameShelf!
-    </h2>
-    <p class="mt-2 text-lg">
-      A SUA GALERIA DE JOGOS!
-    </p>
-    <div class="mt-12 space-y-4 flex-col">
-      <a href="paginas/registro.html"><button class="px-6 py-3 text-lg font-bold text-white bg-blue-500 border-4 border-blue-700 rounded btn-hover transition-transform duration-200">
-        REGISTRE-SE
-      </button></a>
-      <a href="paginas/galeriahome.html"><button class="px-6 py-3 text-lg font-bold text-white bg-blue-500 border-4 border-blue-700 rounded btn-hover transition-transform duration-200">
-        NOSSA GALERIA
-      </button></a>
-      <button class="px-6 py-3 text-lg font-bold text-white bg-blue-500 border-4 border-blue-700 rounded btn-hover transition-transform duration-200">
-        SOBRE NÓS
-      </button>
+    <div class="text-center mb-8 mt-16">
+        <div class="flex items-center justify-center space-x-4">
+        </div>
     </div>
-  </div>
+    <div class="w-full max-w-4xl bg-gray-900 bg-opacity-70 p-6 rounded-lg shadow-lg relative border border-white">
+        <div class="absolute -top-12 left-1/2 transform -translate-x-1/2">
+            <div class="w-24 h-24 bg-gray-700 rounded-full flex justify-center items-center border border-white">
+                <i class="fas fa-user text-5xl text-gray-500"></i>
+            </div>
+        </div>
+        <div class="absolute top-4 right-4">
+            <button class="bg-blue-500 text-gray-300 px-4 py-2 rounded-lg border border-blue -700">Editar Perfil</button>
+        </div>
+        <div class="flex flex-col items-center mt-16 mb-6">
+            <h1 class="text-2xl font-bold">Username</h1>
+        </div>
+        <div class="flex justify-center items-center mb-6">
+            <div class="flex space-x-4">
+                <div class="text-center">
+                    <div class=" text-xl font-bold">0</div>
+                    <div class="text-gray-400">Jogos</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-xl font-bold">0</div>
+                    <div class="text-gray-400">Seguidores</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-xl font-bold">0</div>
+                    <div class="text-gray-400">Seguindo</div>
+                </div>
+            </div>
+        </div>
+        <div class="border-b border-gray-700 mb-6">
+            <ul class="flex justify-between text-gray-400">
+                <li class="pb-2 border-b-2 border-blue-500">Perfil</li>
+                <li class="pb-2 border-b-2 border-transparent">Favoritos</li>
+                <li class="pb-2 border-b-2 border-transparent">Descrição</li>
+            </ul>
+        </div>
+        <div class="mb-6">
+            <h2 class="text-lg font-bold mb-2">RECENTES</h2>
+            <div class="flex space-x-4">
+                <div class="w-1/4 h-32 bg-gray-700 rounded-lg flex justify-center items-center hover-grow transition-transform duration-200">
+                    <a href="FormularioBASE.html"><div class="w-12 h-12 bg-gray-900 rounded-full flex justify-center items-center text-2xl">+</div></a>
+                </div>
+                <div class="w-1/4 h-32 bg-gray-700 rounded-lg hover-grow transition-transform duration-200"></div>
+                <div class="w-1/4 h-32 bg-gray-700 rounded-lg hover-grow transition-transform duration-200"></div>
+                <div class="w-1/4 h-32 bg-gray-700 rounded-lg hover-grow transition-transform duration-200"></div>
+            </div>
+        </div>
+        <div>
+            <h2 class="text-lg font-bold mb-2">MINHA GALERIA</h2>
+            <div class="flex space-x-4 mt-4">
+                <div class="w-1/4 h-32 bg-gray-700 rounded-lg hover-grow transition-transform duration-200"></div>
+                <div class="w-1/4 h-32 bg-gray-700 rounded-lg hover-grow transition-transform duration-200"></div>
+                <div class="w-1/4 h-32 bg-gray-700 rounded-lg hover-grow transition-transform duration-200"></div>
+                <div class="w-1/4 h-32 bg-gray-700 rounded-lg hover-grow transition-transform duration-200"></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
