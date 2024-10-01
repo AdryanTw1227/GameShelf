@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
 <head>
   <title>Adicionar Jogo</title>
@@ -55,7 +56,7 @@
   </style>
   <script>
     function toggleOptions() {
-      var checkbox1 = document.getElementById('PC');
+      var checkbox1 = document.getElementById('botao1');
       var optionsDiv1 = document.getElementById('options-div-1');
       if (checkbox1.checked) {
         optionsDiv1.style.display = 'flex';
@@ -63,7 +64,7 @@
         optionsDiv1.style.display = 'none';
       }
 
-      var checkbox2 = document.getElementById('Video Game Controller');
+      var checkbox2 = document.getElementById('botao2');
       var optionsDiv2 = document.getElementById('options-div-2');
       if (checkbox2.checked) {
         optionsDiv2.style.display = 'flex';
@@ -71,7 +72,7 @@
         optionsDiv2.style.display = 'none';
       }
 
-      var checkbox3 = document.getElementById('Mobile Phone');
+      var checkbox3 = document.getElementById('botao3');
       var optionsDiv3 = document.getElementById('options-div-3');
       if (checkbox3.checked) {
         optionsDiv3.style.display = 'flex';
@@ -94,7 +95,7 @@
         return false;
       }
 
-      var checkbox1 = document.getElementById('PC');
+      var checkbox1 = document.getElementById('botao1');
       if (checkbox1.checked) {
         var options1 = document.getElementsByName('option1');
         var isOption1Checked = false;
@@ -102,15 +103,14 @@
           if (options1[i].checked) {
             isOption1Checked = true;
             break;
-          }
-        }
+                 }
         if (!isOption1Checked) {
-          alert('Por favor, selecione pelo menos uma opção para o PC.');
+          alert('Por favor, selecione pelo menos uma opção para o Botão 1.');
           return false;
         }
       }
 
-      var checkbox2 = document.getElementById('Video Game Controller');
+      var checkbox2 = document.getElementById('botao2');
       if (checkbox2.checked) {
         var options2 = document.getElementsByName('option2');
         var isOption2Checked = false;
@@ -121,13 +121,13 @@
           }
         }
         if (!isOption2Checked) {
-          alert('Por favor, selecione pelo menos uma opção para o Video Game Controller.');
+          alert('Por favor, selecione pelo menos uma opção para o Botão 2.');
           return false;
         }
       }
 
-      var checkbox3 = document.getElementById('Mobile Phone');
-      if ( checkbox3.checked) {
+      var checkbox3 = document.getElementById('botao3');
+      if (checkbox3.checked) {
         var options3 = document.getElementsByName('option3');
         var isOption3Checked = false;
         for (var i = 0; i < options3.length; i++) {
@@ -137,7 +137,7 @@
           }
         }
         if (!isOption3Checked) {
-          alert('Por favor, selecione pelo menos uma opção para o Mobile Phone.');
+          alert('Por favor, selecione pelo menos uma opção para o Botão 3.');
           return false;
         }
       }
@@ -146,68 +146,141 @@
     }
   </script>
 </head>
-<body>
+<body class="bg-gray-200 flex flex-col items-center justify-center min-h-screen shadow-box">
   <div class="fade-overlay"></div>
-  <div class="container mx-auto p-4 pt-6">
-    <h1 class="text-3xl text-center mb-4">Adicionar Jogo</h1>
-    <div class="space-y-4 w-full lg:w-auto">
-      <form class="w-full lg:w-64 h-24 p-2 flex items-center justify-center shadow-box matte-black">
-        <label class="mx-1 form-text">
-          <input class="mr-2" id="PC" name="botao" onclick="toggleOptions()" type="checkbox" value="PC"/>
-          <img src="https://cdn-icons-png.flaticon.com/512/4703/4703487.png" alt="PC" class="w-8 h-8"/>
-        </label>
-        <label class="mx-1 form-text">
-          <input class="mr-2" id="Video Game Controller" name="botao" onclick="toggleOptions()" type="checkbox" value="Video Game Controller"/>
-          <img src="https://cdn-icons-png.flaticon.com/512/4738/4738879.png" alt="Video Game Controller" class="w-8 h-8"/>
-        </label>
-        <label class="mx-1 form-text">
-          <input class="mr-2" id="Mobile Phone" name="botao" onclick="toggleOptions()" type="checkbox" value="Mobile Phone"/>
-          <img src="https://cdn-icons-png.flaticon.com/512/5697/5697604.png" alt="Mobile Phone" class="w-8 h-8"/>
-        </label>
+  <h1 class="text-3xl font-bold mb-8 absolute top-8 text-center">
+    NOS CONTE MAIS SOBRE O JOGO QUE QUER ADICIONAR!
+  </h1>
+  <div class="text-center mt-24 relative z-2 w-full px-4">
+    <div class="flex flex-col lg:flex-row justify-center items-start space-x-0 lg:space-x-4 space-y-4 lg:space-y-0">
+      <form class="w-full lg:w-[600px] h-48 p-4 shadow-box matte-black" onsubmit="return validateForm()" style="height: 300px;">
+        <div class="mb-4">
+          <label class="block text-left mb-2 font-bold form-text" for="nome-jogo">
+            Nome do Jogo:
+          </label>
+          <input class="w-full p-2 border border-gray-300 form-text matte-black" id="nome-jogo" name="nome-jogo" required type="text"/>
+        </div>
+        <div class="mb-4">
+          <label class="block text-left mb-2 font-bold form-text" for="genero-jogo">
+            Gênero do Jogo:
+          </label>
+          <select class="w-full p-2 border border-gray-300 form-text matte-black" id="genero-jogo" name="genero-jogo" required>
+            <option value="">
+              Selecione um gênero
+            </option>
+            <option value="acao">
+              Ação
+            </option>
+            <option value="aventura">
+              Aventura
+            </option>
+            <option value="rpg">
+              RPG
+            </option>
+            <option value="simulacao">
+              Simulação
+            </option>
+            <option value="estrategia">
+              Estratégia
+            </option>
+            <option value="puzzle">
+              Puzzle
+            </option>
+            <option value="terror">
+              Terror
+            </option>
+            <option value="esporte">
+              Esporte
+            </option>
+            <option value="musical">
+              Musical
+            </option>
+            <option value="plataforma">
+              Plataforma
+            </option>
+            <option value="corrida">
+              Corrida
+            </option>
+            <option value="fps">
+              FPS
+            </option>
+            <option value="moba">
+              MOBA
+            </option>
+            <option value="luta">
+              Luta
+            </option>
+            <option value="casual">
+              Casual
+            </option>
+          </select>
+        </div>
+        <button class="bg-blue-500 text-white px-4 py-2 mt-4 submit-button" type="submit">
+          Enviar
+        </button>
       </form>
-      <div class="w-full lg:w-64 h-24 p-2 flex items-center justify-center shadow-box matte-black" id="options-div-1" style="display: none;">
-        <label class="mx-1 form-text">
-          <input class="mr-2" id="Steam" name="option1" type="checkbox" value="Steam"/>
-          <img src="https://cdn.icon-icons.com/icons2/2428/PNG/512/steam_black_logo_icon_147078.png" alt="Steam" class="w-8 h-8"/>
-        </label>
-        <label class="mx-1 form-text">
-          <input class="mr-2" id="Epic Games" name="option1" type="checkbox" value="Epic Games"/>
-          <img src="https://cdn.icon-icons.com/icons2/3914/PNG/512/epicgames_logo_icon_248935.png" alt="Epic Games" class="w-8 h-8"/>
-        </label>
-        <label class="mx-1 form-text">
-          <input class="mr-2" id="GOG" name="option1" type="checkbox" value="GOG"/>
-          <img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/gog_icon_135545.png" alt="GOG" class="w-8 h-8"/>
-        </label>
+      <div class="space-y-4 w-full lg:w-auto">
+        <form class="w-full lg:w-64 h-24 p-2 flex items-center justify-center shadow-box matte-black">
+          <label class="mx-1 form-text">
+            <input class="mr-2" id="botao1" name="botao" onclick="toggleOptions ()" type="checkbox"/>
+            Botão 1
+          </label>
+          <div id="options-div-1" class="hidden flex flex-col space-y-2">
+            <label class="mx-1 form-text">
+              <input class="mr-2" name="option1" type="checkbox"/>
+              Opção 1
+            </label>
+            <label class="mx-1 form-text">
+              <input class="mr-2" name="option1" type="checkbox"/>
+              Opção 2
+            </label>
+            <label class="mx-1 form-text">
+              <input class="mr-2" name="option1" type="checkbox"/>
+              Opção 3
+            </label>
+          </div>
+        </form>
+        <form class="w-full lg:w-64 h-24 p-2 flex items-center justify-center shadow-box matte-black">
+          <label class="mx-1 form-text">
+            <input class="mr-2" id="botao2" name="botao" onclick="toggleOptions()" type="checkbox"/>
+            Botão 2
+          </label>
+          <div id="options-div-2" class="hidden flex flex-col space-y-2">
+            <label class="mx-1 form-text">
+              <input class="mr-2" name="option2" type="checkbox"/>
+              Opção 1
+            </label>
+            <label class="mx-1 form-text">
+              <input class="mr-2" name="option2" type="checkbox"/>
+              Opção 2
+            </label>
+            <label class="mx-1 form-text">
+              <input class="mr-2" name="option2" type="checkbox"/>
+              Opção 3
+            </label>
+          </div>
+        </form>
+        <form class="w-full lg:w-64 h-24 p-2 flex items-center justify-center shadow-box matte-black">
+          <label class="mx-1 form-text">
+            <input class="mr-2" id="botao3" name="botao" onclick="toggleOptions()" type="checkbox"/>
+            Botão 3
+          </label>
+          <div id="options-div-3" class="hidden flex flex-col space-y-2">
+            <label class="mx-1 form-text">
+              <input class="mr-2" name="option3" type="checkbox"/>
+              Opção 1
+            </label>
+            <label class="mx-1 form-text">
+              <input class="mr-2" name="option3" type="checkbox"/>
+              Opção 2
+            </label>
+            <label class="mx-1 form-text">
+              <input class="mr-2" name="option3" type="checkbox"/>
+              Opção 3
+            </label>
+          </div>
+        </form>
       </div>
-      <div class="w-full lg:w-64 h-24 p-2 flex items-center justify-center shadow-box matte-black" id="options-div-2" style="display: none;">
-        <label class="mx-1 form-text">
-          <input class="mr-2" id="PlayStation" name="option2" type="checkbox" value="PlayStation"/>
-          <img src="https://cdn.icon-icons.com/icons2/2428/PNG/512/playstation_black_logo_icon_147094.png" alt="PlayStation" class="w-8 h-8"/>
-        </label>
-        <label class="mx-1 form-text">
-          <input class="mr-2" id="Xbox" name="option2" type="checkbox" value="Xbox"/>
-          <img src="https://cdn-icons-png.flaticon.com/512/1/1321.png" alt="Xbox" class="w-8 h-8"/>
-        </label>
-        <label class="mx-1 form-text">
-          <input class="mr-2" id="Nintendo Switch" name="option2" type="checkbox" value="Nintendo Switch "/>
-          <img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/nintendo_switch_icon_136357.png" alt="Nintendo Switch" class="w-8 h-8"/>
-        </label>
-      </div>
-      <div class="w-full lg:w-64 h-24 p-2 flex items-center justify-center shadow-box matte-black" id="options-div-3" style="display: none;">
-        <label class="mx-1 form-text">
-          <input class="mr-2" id="Mobile" name="option3" type="checkbox" value="Mobile"/>
-          <img src="https://cdn-icons-png.flaticon.com/512/1/1321.png" alt="Mobile" class="w-8 h-8"/>
-        </label>
-        <label class="mx-1 form-text">
-          <input class="mr-2" id="Mobile" name="option3" type="checkbox" value="Mobile"/>
-          <img src="https://cdn-icons-png.flaticon.com/512/1/1321.png" alt="Mobile" class="w-8 h-8"/>
-        </label>
-        <label class="mx-1 form-text">
-          <input class="mr-2" id="Mobile" name="option3" type="checkbox" value="Mobile"/>
-          <img src="https://cdn-icons-png.flaticon.com/512/1/1321.png" alt="Mobile" class="w-8 h-8"/>
-        </label>
-      </div>
-      <button class="submit-button" onclick="return validateForm()">Adicionar Jogo</button>
     </div>
   </div>
 </body>
