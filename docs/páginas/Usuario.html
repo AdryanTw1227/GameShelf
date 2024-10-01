@@ -1,175 +1,280 @@
 <!DOCTYPE HTML>
 <html lang='pt-br'>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuário</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-color: #1c1c1c;
-            color: #ffffff;
-            font-family: 'Press Start 2P', cursive;
+ <head>
+  <title>Adicionar Jogo</title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+            background: url('https://wallpapercave.com/wp/wp4147573.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
         }
-        .hover-grow:hover {
-            transform: scale(1.05);
-        }
-        .navbar {
-            position: fixed;
+   .fade-overlay {
+            position: absolute;
             top: 0;
+            left: 0;
             width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.5rem 1rem;
-            background: rgba(255, 255, 255, 0);
-            z-index: 1000;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%);
+            z-index: 1;
         }
-        .navbar .logo {
+   h1 {
+            font-family: 'Press Start 2P', cursive;
+            z-index: 2;
+            position: relative;
+            color: white;
+        }
+   .shadow-box {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            position: relative;
+        }
+   .matte-black {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            border-radius: 8px;
+            border: 1px solid #a9a9a9;
+            z-index: 2;
+            position: relative;
+        }
+   .form-text {
             font-family: 'Press Start 2P', cursive;
             color: white;
-            font-size: 1.25rem;
         }
-        .navbar .search-bar {
-            display: flex;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0.25rem 0.5rem;
-            border-radius: 0.25rem;
-        }
-        .navbar .search-bar input {
-            background: transparent;
-            border: none;
-            outline: none;
+   .select-box {
+            background-color: rgba(0, 0, 0, 0.8);
             color: white;
+        }
+   .submit-button {
             font-family: 'Press Start 2P', cursive;
-            margin-right: 0.5rem;
+            border: 2px solid #4a4a4a;
         }
-        .navbar .search-bar i {
-            color: white;
-        }
-        .navbar .login-button {
-            font-family: 'Press Start 2P', cursive;
-            background: #007bff;
-            border: 2px solid #0056b3;
-            color: white;
-            padding: 0.25rem 0.5rem;
-            border-radius: 0.25rem;
-            cursor: pointer;
+  </style>
+  <script>
+   function toggleOptions() {
+            var checkbox1 = document.getElementById('botao1');
+            var optionsDiv1 = document.getElementById('options-div-1');
+            if (checkbox1.checked) {
+                optionsDiv1.style.display = 'flex';
+            } else {
+                optionsDiv1.style.display = 'none';
+            }
+
+            var checkbox2 = document.getElementById('botao2');
+            var optionsDiv2 = document.getElementById('options-div-2');
+            if (checkbox2.checked) {
+                optionsDiv2.style.display = 'flex';
+            } else {
+                optionsDiv2.style.display = 'none';
+            }
+
+            var checkbox3 = document.getElementById('botao3');
+            var optionsDiv3 = document.getElementById('options-div-3');
+            if (checkbox3.checked) {
+                optionsDiv3.style.display = 'flex';
+            } else {
+                optionsDiv3.style.display = 'none';
+            }
         }
 
-        /* Add media queries for responsiveness */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                align-items: center;
+        function validateForm() {
+            var checkboxes = document.getElementsByName('botao');
+            var isChecked = false;
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    isChecked = true;
+                    break;
+                }
             }
-            .navbar .logo {
-                font-size: 1rem;
+            if (!isChecked) {
+                alert('Por favor, selecione pelo menos uma opção.');
+                return false;
             }
-            .navbar .search-bar {
-                width: 100%;
+
+            var checkbox1 = document.getElementById('botao1');
+            if (checkbox1.checked) {
+                var options1 = document.getElementsByName('option1');
+                var isOption1Checked = false;
+                for (var i = 0; i < options1.length; i++) {
+                    if (options1[i].checked) {
+                        isOption1Checked = true;
+                        break;
+                    }
+                }
+                if (!isOption1Checked) {
+                    alert('Por favor, selecione pelo menos uma opção para o Botão 1.');
+                    return false;
+                }
             }
-            .navbar .search-bar input {
-                width: 100%;
+
+            var checkbox2 = document.getElementById('botao2');
+            if (checkbox2.checked) {
+                var options2 = document.getElementsByName('option2');
+                var isOption2Checked = false;
+                for (var i = 0; i < options2.length; i++) {
+                    if (options2[i].checked) {
+                        isOption2Checked = true;
+                        break;
+                    }
+                }
+                if (!isOption2Checked) {
+                    alert('Por favor, selecione pelo menos uma opção para o Botão 2.');
+                    return false;
+                }
             }
-            .w-full.max-w-4xl {
-                max-width: 100%;
+
+            var checkbox3 = document.getElementById('botao3');
+            if (checkbox3.checked) {
+                var options3 = document.getElementsByName('option3');
+                var isOption3Checked = false;
+                for (var i = 0; i < options3.length; i++) {
+                    if (options3[i].checked) {
+                        isOption3Checked = true;
+                        break;
+                    }
+                }
+                if (!isOption3Checked) {
+                    alert('Por favor, selecione pelo menos uma opção para o Botão 3.');
+                    return false;
+                }
             }
-            .flex.space-x-4 {
-                flex-direction: column;
-                align-items: center;
-            }
-            .w-1/4.h-32 {
-                width: 100%;
-                height: 16rem;
-            }
+
+            return true;
         }
-        @media (max-width: 480px) {
-            .navbar .logo {
-                font-size: 0.75rem;
-            }
-            .w-1/4.h-32 {
-                height: 12rem;
-            }
-        }
-        @media (max-width: 320px) {
-            .navbar .logo {
-                font-size: 0.5rem;
-            }
-            .w-1/4.h-32 {
-                height: 8rem;
-            }
-        }
-    </style>
-</head>
-<body class="flex justify-center items-center min-h-screen">
-    <div class="navbar">
-        <a href='../index.html'><div class="logo">
-            GameShelf
-        </div></a>
+  </script>
+ </head>
+ <body class="bg-gray-200 flex flex-col items-center justify-center min-h-screen shadow-box">
+  <div class="fade-overlay"></div>
+  <h1 class="text-3xl font-bold mb-8 absolute top-8 text-center">
+    NOS CONTE MAIS SOBRE O JOGO QUE QUER ADICIONAR!
+   </h1>
+  <div class="text-center mt-24 relative z-2 w-full px-4">
+   <div class="flex flex-col lg:flex-row justify-center items-start space-x-0 lg:space-x-4 space-y-4 lg:space-y-0">
+    <form class="w-full lg:w-[600px] h-48 p-4 shadow-box matte-black" onsubmit="return validateForm()" style="height: 300px;">
+     <div class="mb-4">
+      <label class="block text-left mb-2 font-bold form-text" for="nome-jogo">
+        Nome do Jogo:
+      </label>
+      <input class="w-full p-2 border border-gray-300 form-text matte-black" id="nome-jogo" name="nome-jogo" required type="text"/>
+     </div>
+     <div class="mb-4">
+      <label class="block text-left mb-2 font-bold form-text" for="genero-jogo">
+        Gênero do Jogo:
+      </label>
+      <select class="w-full p-2 border border-gray-300 form-text matte-black" id="genero-jogo" name="genero-jogo" required>
+       <option value="">
+         Selecione um gênero
+       </option>
+       <option value="acao">
+         Ação
+       </option>
+       <option value="aventura">
+         Aventura
+       </option>
+       <option value="rpg">
+         RPG
+       </option>
+       <option value="simulacao">
+         Simulação
+       </option>
+       <option value="estrategia">
+         Estratégia
+       </option>
+       <option value="puzzle">
+         Puzzle
+       </option>
+       <option value="terror">
+         Terror
+       </option>
+       <option value="esporte">
+         Esporte
+       </option>
+       <option value="musical">
+         Musical
+       </option>
+       <option value="plataforma">
+         Plataforma
+       </option>
+       <option value="corrida">
+         Corrida
+       </option>
+       <option value="fps">
+         FPS
+       </option>
+       <option value="moba">
+         MOBA
+       </option>
+       <option value="luta">
+         Luta
+       </option>
+       <option value="casual">
+         Casual
+       </option>
+      </select>
+     </div>
+     <button class="bg-blue-500 text-white px-4 py-2 mt-4 submit-button" type="submit">
+       Enviar
+     </button>
+    </form>
+    <div class="space-y-4 w-full lg:w-auto">
+     <form class="w-full lg:w-64 h-24 p-2 flex items-center justify-center shadow-box matte-black">
+      <label class="mx-1 form-text">
+       <input class="mr-2" id="botao1" name="botao" onclick="toggleOptions()" type="checkbox" value="botao1"/>
+       <img src="https://cdn-icons-png.flaticon.com/512/4703/4703487.png" alt="PC Icon" class="w-8 h-8"/>
+      </label>
+      <label class="mx-1 form-text">
+       <input class="mr-2" id="botao2" name="botao" onclick="toggleOptions()" type="checkbox" value="botao2"/>
+       <img src="https://cdn-icons-png.flaticon.com/512/4738/4738879.png" alt="Video Game Controller Icon" class="w-8 h-8"/>
+      </label>
+      <label class="mx-1 form-text">
+       <input class="mr-2" id="botao3" name="botao" onclick="toggleOptions()" type="checkbox" value="botao3"/>
+       <img src="https://cdn-icons-png.flaticon.com/512/5697/5697604.png" alt="Mobile Phone Icon" class="w-8 h-8"/>
+      </label>
+     </form>
+     <div class="w-full lg:w-64 h-24 p-2 flex items-center justify-center shadow-box matte-black" id="options-div-1" style="display: none;">
+      <label class="mx-1 form-text">
+       <input class="mr-2" name="option1" type="checkbox" value="option1"/>
+       <img src="https://cdn.icon-icons.com/icons2/2428/PNG/512/steam_black_logo_icon_147078.png" alt="Steam Icon" class="w-8 h-8"/>
+      </label>
+      <label class="mx-1 form-text">
+       <input class="mr-2" name="option1" type="checkbox" value="option2"/>
+       <img src="https://cdn.icon-icons.com/icons2/3914/PNG/512/epicgames_logo_icon_248935.png" alt="Epic Games Icon" class="w-8 h-8"/>
+      </label>
+      <label class="mx-1 form-text">
+       <input class="mr-2" name="option1" type="checkbox" value="option3"/>
+       <img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/gog_icon_135545.png" alt="GOG Icon" class="w-8 h-8"/>
+      </label>
+     </div>
+     <div class="w-full lg:w-64 h-24 p-2 flex items-center justify-center shadow-box matte-black" id="options-div-2" style="display: none;">
+      <label class="mx-1 form-text">
+       <input class="mr-2" name="option2" type="checkbox" value="option1"/>
+       <img src="https://cdn.icon-icons.com/icons2/2428/PNG/512/playstation_black_logo_icon_147094.png" alt="PlayStation Icon" class="w-8 h-8"/>
+      </label>
+      <label class="mx-1 form-text">
+       <input class="mr-2" name="option2" type="checkbox" value="option2"/>
+       <img src="https://cdn-icons-png.flaticon.com/512/1/1321.png" alt="Xbox Icon" class="w-8 h-8"/>
+      </label>
+      <label class="mx-1 form-text">
+       <input class="mr-2" name="option2" type="checkbox" value="option3"/>
+       <img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/nintendo_switch_icon_136357.png" alt="Nintendo Switch Icon" class="w-8 h-8"/>
+      </label>
+     </div>
+     <div class="w-full lg:w-64 h-24 p-2 flex items-center justify-center shadow-box matte-black" id="options-div-3" style="display: none;">
+      <label class="mx-1 form-text">
+       <input class="mr-2" name="option3" type="checkbox" value="option4"/>
+       <img src="https://cdn-icons-png.flaticon.com/512/160/160138.png" alt="Android Icon" class="w-8 h-8"/>
+      </label>
+      <label class="mx-1 form-text">
+       <input class="mr-2" name="option3" type="checkbox" value="option5"/>
+       <img src="https://icons.veryicon.com/png/o/miscellaneous/bitisland-world/iphone-42.png" alt="iPhone Icon" class="w-8 h-8"/>
+      </label>
+     </div>
     </div>
-    <div class="text-center mb-8 mt-16">
-        <div class="flex items-center justify-center space-x-4">
-        </div>
-    </div>
-    <div class="w-full max-w-4xl bg-gray-900 bg-opacity-70 p-6 rounded-lg shadow-lg relative border border-white">
-        <div class="absolute -top-12 left-1/2 transform -translate-x-1/2">
-            <div class="w-24 h-24 bg-gray-700 rounded-full flex justify-center items-center border border-white">
-                <i class="fas fa-user text-5xl text-gray-500"></i>
-            </div>
-        </div>
-        <div class="absolute top-4 right-4">
-            <button class="bg-blue-500 text-gray-300 px-4 py-2 rounded-lg border border-blue -700">Editar Perfil</button>
-        </div>
-        <div class="flex flex-col items-center mt-16 mb-6">
-            <h1 class="text-2xl font-bold">Username</h1>
-        </div>
-        <div class="flex justify-center items-center mb-6">
-            <div class="flex space-x-4">
-                <div class="text-center">
-                    <div class=" text-xl font-bold">0</div>
-                    <div class="text-gray-400">Jogos</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-xl font-bold">0</div>
-                    <div class="text-gray-400">Seguidores</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-xl font-bold">0</div>
-                    <div class="text-gray-400">Seguindo</div>
-                </div>
-            </div>
-        </div>
-        <div class="border-b border-gray-700 mb-6">
-            <ul class="flex justify-between text-gray-400">
-                <li class="pb-2 border-b-2 border-blue-500">Perfil</li>
-                <li class="pb-2 border-b-2 border-transparent">Favoritos</li>
-                <li class="pb-2 border-b-2 border-transparent">Descrição</li>
-            </ul>
-        </div>
-        <div class="mb-6">
-            <h2 class="text-lg font-bold mb-2">RECENTES</h2>
-            <div class="flex space-x-4">
-                <div class="w-1/4 h-32 bg-gray-700 rounded-lg flex justify-center items-center hover-grow transition-transform duration-200">
-                    <a href="FormularioBASE.html"><div class="w-12 h-12 bg-gray-900 rounded-full flex justify-center items-center text-2xl">+</div></a>
-                </div>
-                <div class="w-1/4 h-32 bg-gray-700 rounded-lg hover-grow transition-transform duration-200"></div>
-                <div class="w-1/4 h-32 bg-gray-700 rounded-lg hover-grow transition-transform duration-200"></div>
-                <div class="w-1/4 h-32 bg-gray-700 rounded-lg hover-grow transition-transform duration-200"></div>
-            </div>
-        </div>
-        <div>
-            <h2 class="text-lg font-bold mb-2">MINHA GALERIA</h2>
-            <div class="flex space-x-4 mt-4">
-                <div class="w-1/4 h-32 bg-gray-700 rounded-lg hover-grow transition-transform duration-200"></div>
-                <div class="w-1/4 h-32 bg-gray-700 rounded-lg hover-grow transition-transform duration-200"></div>
-                <div class="w-1/4 h-32 bg-gray-700 rounded-lg hover-grow transition-transform duration-200"></div>
-                <div class="w-1/4 h-32 bg-gray-700 rounded-lg hover-grow transition-transform duration-200"></div>
-            </div>
-        </div>
-    </div>
-</body>
+   </div>
+  </div>
+ </body>
 </html>
