@@ -14,13 +14,3 @@ body {
     background: rgba(0, 0, 0, 0.5);
     z-index: -1;
    }
-.custom-button {
-    background-color: #2563EB; /* Blue background */
-    color: #FFFFFF; /* White text */
-    font-family: 'Press Start 2P', cursive;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border: 2px solid #1E3A8A; /* Darker blue border */
-    margin-top: 2rem; /* Add margin to move the button lower */
-    transition: transform 0.2s; /* Smooth transition for hover effect */
-}
