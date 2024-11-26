@@ -5,6 +5,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../Style/formulario.css">
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -15,7 +16,6 @@
       flex-direction: column;
       align-items: center; 
       justify-content: center; 
-      min-height: 100vh;
     }
     .fade-overlay {
       position: absolute;
@@ -57,6 +57,20 @@
       font-family: 'Press Start 2P', cursive;
       border: 2px solid #4a4a4a;
     }
+    .icon-label {
+      cursor: pointer;
+    }
+    .icon-label img {
+      width: 64px;
+      height: 64px;
+      transition: transform 0.2s;
+    }
+    .icon-label img:hover {
+      transform: scale(1.1);
+    }
+    .hidden {
+      display: none;
+    }
     @media (max-width: 768px) { 
       body {
         flex-direction: column;
@@ -74,16 +88,16 @@
       }
     
       h1 {
-        font-size: 1.5rem; 
+        font-size: 2rem; 
       }
     
       .form-text {
-        font-size: 0.875rem; 
+        font-size: 1rem; 
       }
     
       .w-8 {
-        width: 32px; 
-        height: 32px; 
+        width: 48px; 
+        height: 48px; 
       }
     }
   </style>
@@ -95,7 +109,7 @@
   </h1>
   <div class="text-center mt-24 relative z-2 w-full px-4">
     <div class="flex flex-col lg:flex-row justify-center items-start space-x-0 lg:space-x-4 space-y-4 lg:space-y-0">
-      <form class="w-full lg:w-[600px] p-4 shadow-box matte-black" onsubmit="return validateForm()">
+      <form class="w-full lg:w-[600px] h-48 p-4 shadow-box matte-black" onsubmit="return validateForm()" style="height: 300px;">
         <div class="mb-4">
           <label class="block text-left mb-2 font-bold form-text" for="nome-jogo">
             Nome do Jogo:
@@ -162,69 +176,54 @@
         </button>
       </form>
       <div class="space-y-4 w-full lg:w-auto">
-        <form class="w-full lg:w-64 p-2 flex items-center justify-center shadow-box matte-black">
-          <label class="mx-1 form-text">
-            <input class="mr-2" id="botao1" name="botao" onclick="toggleOptions()" type="checkbox" value="botao1"/>
-            <img src="https://cdn-icons-png.flaticon.com/512/4703/4703487.png" alt="PC Icon" class="w-8 h-8"/>
+        <div class="w-full lg:w-64 h-24 p-2 flex items-center justify-center shadow-box matte-black">
+          <label class="mx-1 form-text icon-label" onclick="toggleOptions('botao1')">
+            <img src="https://cdn-icons-png.flaticon.com/512/4703/4703487.png" alt="PC Icon" class="w-16 h-16"/>
           </label>
-          <label class="mx-1 form-text">
-            <input class="mr-2" id="botao2" name="botao" onclick="toggleOptions()" type="checkbox" value="botao2"/>
-            <img src="https://cdn-icons-png.flaticon.com/512/4738/4738879.png" alt="Video Game Controller Icon" class="w-8 h-8"/>
+          <label class="mx-1 form-text icon-label" onclick="toggleOptions('botao2')">
+            <img src="https://cdn-icons-png.flaticon.com/512/4738/4738879.png" alt="Video Game Controller Icon" class="w-16 h-16"/>
           </label>
-          <label class="mx-1 form-text">
-            <input class="mr-2" id="botao3" name="botao" onclick="toggleOptions()" type="checkbox" value="botao3"/>
-            <img src="https://cdn-icons-png.flaticon.com/512/5697/5697604.png" alt="Mobile Phone Icon" class="w-8 h-8"/>
-          </label>
-        </form>
-        <div class="w-full lg:w-64 p-2 flex items-center justify-center shadow-box matte-black" id="options-div-1" style="display: none;">
-          <label class="mx-1 form-text">
-            <input class="mr-2" name="option1" type="checkbox" value="option1"/>
-            <img src="https://cdn.icon-icons.com/icons2/2428/PNG/512/steam_black_logo_icon_147078.png" alt="Steam Icon" class="w-8 h-8"/>
-          </label>
-          <label class="mx-1 form-text">
-            <input class="mr-2" name="option1" type="checkbox" value="option2"/>
-            <img src="https://cdn.icon-icons.com/icons2/3914/PNG/512/epicgames_logo_icon_248935.png" alt="Epic Games Icon" class="w-8 h-8"/>
-          </label>
-          <label class="mx-1 form-text">
-            <input class="mr-2" name="option1" type="checkbox" value="option3"/>
-            <img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/gog_icon_135545.png" alt="GOG Icon" class="w-8 h-8"/>
+          <label class="mx-1 form-text icon-label" onclick="toggleOptions('botao3')">
+            <img src="https://cdn-icons-png.flaticon.com/512/5697/5697604.png" alt="Mobile Phone Icon" class="w-16 h-16"/>
           </label>
         </div>
-        <div class="w-full lg:w-64 p-2 flex items-center justify-center shadow-box matte-black" id="options-div-2" style="display: none;">
-          <label class="mx-1 form-text">
-            <input class="mr-2" name="option2" type="checkbox" value="option1"/>
-            <img src="https://cdn.icon-icons.com/icons2/2428/PNG/512/playstation_black_logo_icon_147094.png" alt="PlayStation Icon" class="w-8 h-8"/>
+        <div class="w-full lg:w-64 h-24 p-2 flex items-center justify-center shadow-box matte-black hidden" id="options-div-1">
+          <label class="mx-1 form-text icon-label">
+            <img src="https://cdn.icon-icons.com/icons2/2428/PNG/512/steam_black_logo_icon_147078.png" alt="Steam Icon" class="w-16 h-16"/>
           </label>
-          <label class="mx-1 form-text">
-            <input class="mr-2" name="option2" type="checkbox" value="option2"/>
-            <img src="https://cdn-icons-png.flaticon.com/512/1/1321.png" alt="Xbox Icon" class="w-8 h-8"/>
+          <label class="mx-1 form-text icon-label">
+            <img src="https://cdn.icon-icons.com/icons2/3914/PNG/512/epicgames_logo_icon_248935.png" alt="Epic Games Icon" class="w-16 h-16"/>
           </label>
-          <label class="mx-1 form-text">
-            <input class="mr-2" name="option2" type="checkbox" value="option3"/>
-            <img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/nintendo_switch_icon_136357.png" alt="Nintendo Switch Icon" class="w-8 h-8"/>
+          <label class="mx-1 form-text icon-label">
+            <img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/gog_icon_135545.png" alt="GOG Icon" class="w-16 h-16"/>
           </label>
         </div>
-        <div class="w-full lg:w-64 p-2 flex items-center justify-center shadow-box matte-black" id="options-div-3" style="display: none;">
-          <label class="mx-1 form-text">
-            <input class="mr-2" name="option3" type="checkbox" value="option4"/>
-            <img src="https://cdn-icons-png.flaticon.com/512/160/160138.png" alt="Android Icon" class="w-8 h-8"/>
+        <div class="w-full lg:w-64 h-24 p-2 flex items-center justify-center shadow-box matte-black hidden" id="options-div-2">
+          <label class="mx-1 form-text icon-label">
+            <img src="https://cdn.icon-icons.com/icons2/2428/PNG/512/playstation_black_logo_icon_147094.png" alt="PlayStation Icon" class="w-16 h-16"/>
           </label>
-          <label class="mx-1 form-text">
-            <input class="mr-2" name="option3" type="checkbox" value="option5"/>
-            <img src="https://icons.veryicon.com/png/o/miscellaneous/bitisland-world/iphone-42.png" alt="iPhone Icon" class="w-8 h-8"/>
+          <label class="mx-1 form-text icon-label">
+            <img src="https://cdn-icons-png.flaticon.com/512/1/1321.png" alt="Xbox Icon" class="w-16 h-16"/>
+          </label>
+          <label class="mx-1 form-text icon-label">
+            <img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/nintendo_switch_icon_136357.png" alt="Nintendo Switch Icon" class="w-16 h-16"/>
+          </label>
+        </div>
+        <div class="w-full lg:w-64 h-24 p-2 flex items-center justify-center shadow-box matte-black hidden" id="options-div-3">
+          <label class="mx-1 form-text icon-label">
+            <img src="https://cdn-icons-png.flaticon.com/512/160/160138.png" alt="Android Icon" class="w-16 h-16"/>
+          </label>
+          <label class="mx-1 form-text icon-label">
+            <img src="https://icons.veryicon.com/png/o/miscellaneous/bitisland-world/iphone-42.png" alt="iPhone Icon" class="w-16 h-16"/>
           </label>
         </div>
       </div>
     </div>
   </div>
   <script>
-    function toggleOptions() {
-      var checkboxes = ['botao1', 'botao2', 'botao3'];
-      checkboxes.forEach(function (id) {
-        var checkbox = document.getElementById(id);
-        var optionsDiv = document.getElementById('options-div-' + id.charAt(id.length - 1));
-        optionsDiv.style.display = checkbox.checked ? 'flex' : 'none';
-      });
+    function toggleOptions(buttonId) {
+      var optionsDiv = document.getElementById('options-div-' + buttonId.charAt(buttonId.length - 1));
+      optionsDiv.classList.toggle('hidden');
     }
 
     function validateForm() {
