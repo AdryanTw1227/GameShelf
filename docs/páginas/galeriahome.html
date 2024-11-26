@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+ <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../Script/galeria.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../Style/galeria.css"/>
+ </head>
+ <body class="flex flex-col items-center justify-center min-h-screen bg-opacity-50 relative">
+  <div class="fade-overlay">
+  </div>
+  <!-- Navbar -->
+  <div class="navbar">
+   <a href='../index.html'><div class="logo">
+    GameShelf
+   </div></a>
+   <div class="search-bar">
+    <input placeholder="Search" type="text"/>
+    <i class="fas fa-search">
+    </i>
+   </div>
+   <a href='login.html' class="login-button">
+    Entrar
+   </button></a>
+  </div>
+  <div class="text-center mb-8 mt-16">
+   <div class="flex items-center justify-center space-x-4">
+   </div>
+  </div>
+  <!-- Content Wrapper -->
+  <div class="content-wrapper">
+   <!-- Section 1 -->
+   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+    <div class="w-full h-80 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-110">
+    </div>
+    <div class="w-full h-80 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-110">
+    </div>
+    <div class="w-full h-80 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-110">
+    </div>
+   </div>
+   <!-- Carousel Section 1 -->
+   <div class="relative mb-8">
+    <h2 class="section-title text-left mb-4">
+     Destaques
+    </h2>
+    <button class="carousel-button left" onclick="scrollCarousel(-1, 'carousel1')">
+     <i class="fas fa-chevron-left">
+     </i>
+    </button>
+    <div class="carousel" id="carousel1">
+     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg mx-2">
+     </div>
+     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg mx-2">
+     </div>
+     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg mx-2">
+     </div>
+     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg mx-2">
+     </div>
+     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg mx-2">
+     </div>
+     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg mx-2">
+     </div>
+     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg mx-2">
+     </div>
+     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg mx-2">
+     </div>
+     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg mx-2">
+     </div>
+     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg mx-2">
+     </div>
+    </div>
+    <button class="carousel-button right" onclick="scrollCarousel(1, 'carousel1')">
+     <i class="fas fa-chevron-right">
+     </i>
+    </button>
+   </div>
+   <!-- Carousel Section 2 -->
+   <div class="relative mb-8">
+    <h2 class="section-title text-left mb-4">
+     Novidades
+    </h2>
+    <button class="carousel-button left" onclick="scrollCarousel(-1, 'carousel2')">
+     <i class="fas fa-chevron-left">
+     </i>
+    </button>
+    <div class="carousel" id="carousel2">
+     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg mx-2">
+     </div>
+     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg mx-2">
+     </div>
+     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg mx-2">
+     </div>
+     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg mx-2">
+     </div>
+     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg mx-2">
+     </div>
+     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg mx-2">
+     </div>
+     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg mx-2">
+     </div>
+     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg mx-2">
+     </div>
+     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg mx-2">
+     </div>
+     <div class="carousel-item w-36 h-44 bg-gray-500 bg-opacity-50 rounded-lg mx-2">
+     </div>
+    </div>
+    <button class="carousel-button right" onclick="scrollCarousel(1, 'carousel2')">
+     <i class="fas fa-chevron-right">
+     </i>
+    </button>
+   </div>
+   <!-- Section Divider -->
+   <div class="section-divider">
+   </div>
+   <!-- Gallery Section -->
+   <div class="text-center mb-8">
+    <h2 class="section-title text-left mb-4">
+     Galeria
+    </h2>
+   </div>
+   <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-8">
+    <div class="w-full h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-110">
+    </div>
+    <div class="w-full h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-110">
+    </div>
+    <div class="w-full h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-110">
+    </div>
+    <div class="w-full h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-110">
+    </div>
+    <div class="w-full h-44 bg-gray-500 bg-opacity-50 rounded-lg flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-110">
+    </div>
+   </div>
+   <!-- Next Page Arrow -->
+   <div class="next-page">
+    <span class="text-white text-xl">
+     Próxima Página
+    </span>
+    <i class="fas fa-arrow-right text-white text-xl">
+    </i>
+   </div>
+  </div>
+ </body>
+</html>

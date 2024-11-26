@@ -1,0 +1,140 @@
+<html lang='pt-br'>
+<head>
+  <title>Adicionar Jogo</title>
+  <script src="../Script/formulario.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../Style/formulario.css">
+</head>
+<body class="bg-gray-200 flex flex-col items-center justify-center min-h-screen shadow-box">
+  <div class="fade-overlay"></div>
+  <h1 class="text-4xl font-bold mb-8 absolute top-8 text-center">
+    NOS CONTE MAIS SOBRE O JOGO QUE QUER ADICIONAR!
+  </h1>
+  <div class="text-center mt-16 relative z-2 w-full px-4">
+    <div class="flex flex-col lg:flex-row justify-center items-start space-x-0 lg:space-x-4 space-y-4 lg:space-y-0">
+      <form class="w-full lg:w-[1000px] h-48 p-4 shadow-box matte-black" onsubmit="return validateForm()" style="height: 500px;">
+        <div class="mb-4">
+          <label class="block text-left mb-2 font-bold form-text" for="nome-jogo">
+            Nome do Jogo:
+          </label>
+          <input class="w-full p-4 border border-gray-300 form-text matte-black" id="nome-jogo" name="nome-jogo" required type="text"/>
+        </div>
+        <div class="mb-4">
+          <label class="block text-left mb-2 font-bold form-text" for="genero-jogo">
+            Gênero do Jogo:
+          </label>
+          <select class="w-full p-4 border border-gray-300 form-text matte-black" id="genero-jogo" name="genero-jogo" required>
+            <option value="">
+              Selecione um gênero
+            </option>
+            <option value="acao">
+              Ação
+            </option>
+            <option value="aventura">
+              Aventura
+            </option>
+            <option value="rpg">
+              RPG
+            </option>
+            <option value="simulacao">
+              Simulação
+            </option>
+            <option value="estrategia">
+              Estratégia
+            </option>
+            <option value="puzzle">
+              Puzzle
+            </option>
+            <option value="terror">
+              Terror
+            </option>
+            <option value="esporte">
+              Esporte
+            </option>
+            <option value="musical">
+              Musical
+            </option>
+            <option value="plataforma">
+              Plataforma
+            </option>
+            <option value="corrida">
+              Corrida
+            </option>
+            <option value="fps">
+              FPS
+            </option>
+            <option value="moba">
+              MOBA
+            </option>
+            <option value="luta">
+              Luta
+            </option>
+            <option value="casual">
+              Casual
+            </option>
+          </select>
+        </div>
+        <button class="bg-blue-500 text-white px-6 py-4 mt-4 submit-button" id="submit-button" type="submit">
+          Enviar
+        </button>
+      </form>
+      <div class="space-y-4 w-full lg:w-auto">
+        <div class="w-full lg:w-80 h-40 p-4 flex items-center justify-center shadow-box matte-black" style="max-width: 500px;">
+          <label class="mx-2 form-text icon-label">
+            <input type="checkbox" id="botao1" name="botao" onclick="toggleOptions('botao1')">
+            <img src="../imagens/pc.png" alt="PC Icon" class="w-20 h-20" data-color="red">
+          </label>
+          <label class="mx-2 form-text icon-label">
+            <input type="checkbox" id="botao2" name="botao" onclick="toggleOptions('botao2')">
+            <img src="../imagens/Videogame.png" alt="Video Game Controller Icon" class="w-20 h-20" data-color="green">
+          </label>
+          <label class="mx-2 form-text icon-label">
+            <input type="checkbox" id="botao3" name="botao" onclick="toggleOptions('botao3')">
+            <img src="../imagens/celular.png" alt="Mobile Phone Icon" class="w-20 h-20" data-color="blue">
+          </label>
+        </div>
+        <div class="w-full lg:w-80 h-40 p-4 flex items-center justify-center shadow-box matte-black hidden" id="options-div-1" style="max-width: 500px;">
+          <label class="mx-2 form-text icon-label">
+            <input type="checkbox" name="option1" class="hidden">
+            <img src="../imagens/steam.webp" alt="Steam Icon" class="w-20 h-20" data-color="darkblue">
+          </label>
+          <label class="mx-2 form-text icon-label">
+            <input type="checkbox" name="option1" class="hidden">
+            <img src="../imagens/epic.webp" alt="Epic Games Icon" class="w-20 h-20" data-color="lightgray">
+          </label>
+          <label class="mx-2 form-text icon-label">
+            <input type="checkbox" name="option1" class="hidden">
+            <img src="../imagens/gog.webp" alt="GOG Icon" class="w-20 h-20" data-color="purple">
+          </label>
+        </div>
+        <div class="w-full lg:w-80 h-40 p-4 flex items-center justify-center shadow-box matte-black hidden" id="options-div-2" style="max-width: 500px;">
+          <label class="mx-2 form-text icon-label">
+            <input type="checkbox" name="option2" class="hidden">
+            <img src="../imagens/Playstation.webp" alt="PlayStation Icon" class="w-20 h-20" data-color="#0b1f66">
+          </label>
+          <label class="mx-2 form-text icon-label">
+            <input type="checkbox" name="option2" class="hidden">
+            <img src="../imagens/Xbox.png" alt="Xbox Icon" class="w-20 h-20" data-color="#06d436">
+          </label>
+          <label class="mx-2 form-text icon-label">
+            <input type="checkbox" name="option2" class="hidden">
+            <img src="../imagens/switch.webp" alt="Nintendo Switch Icon" class="w-20 h-20" data-color="red">
+          </label>
+        </div>
+        <div class="w-full lg:w-80 h-40 p-4 flex items-center justify-center shadow-box matte-black hidden" id="options-div-3" style="max-width: 500px;">
+          <label class="mx-2 form-text icon-label">
+            <input type="checkbox" name="option3" class="hidden">
+            <img src="../imagens/android.png" alt="Android Icon" class="w-20 h-20" data-color="green">
+          </label>
+          <label class="mx-2 form-text icon-label">
+            <input type="checkbox" name="Iphone" class="hidden">
+            <img src="../imagens/iphone.png" alt="iPhone Icon" class="w-20 h-20" data-color="blue">
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
